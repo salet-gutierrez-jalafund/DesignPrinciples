@@ -12,6 +12,7 @@ public class UserAuthenticator
     public bool IsValidUser(string username, string password)
     {
         var user = _userDataProvider.GetUserByUsername(username);
+
         return user != null && user.Password == password;
     }
 }
