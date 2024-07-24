@@ -1,4 +1,4 @@
-﻿namespace Kiss;
+﻿namespace KissComplex;
 
 public class User
 {
