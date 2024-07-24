@@ -3,6 +3,8 @@
 public class UserManager
 {
   private readonly List<User> _users;
+  
+  private readonly PasswordManager _passwordManager;
 
   public UserManager()
   {
@@ -20,7 +22,7 @@ public class UserManager
 
     if (user != null)
     {
-      user.UpdatePassword(newPassword);
+      _passwordManager.UpdatePassword(user, newPassword);
     }
     else
     {
