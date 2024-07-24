@@ -13,6 +13,12 @@ public class UserManager
 
   public void AddUser(string username, string email, string password)
   {
+    var existingUser = _users.FirstOrDefault(u => u.Username == username);
+    if (existingUser != null)
+    {
+        Console.WriteLine($"User with username {username} already exists.");
+        return;
+    }
     _users.Add(new User { Username = username, Email = email, Password = password });
   }
 
